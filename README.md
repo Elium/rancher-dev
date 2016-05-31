@@ -10,4 +10,7 @@ This project helps to easily start a rancher server + agent on your local machin
 
 ## Launching the stack
 
-`docker-compose up -d -
+```
+git clone git@github.com:Elium/rancher-dev.git
+cd rancher-dev && ./start.sh
+```

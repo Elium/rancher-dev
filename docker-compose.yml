@@ -1,0 +1,15 @@
+rancher-agent-local:
+  build: ./rancher-agent-local
+  entrypoint: "/warmup.sh"
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+  links:
+    - rancher-server:server
+
+rancher-server:
+  image: rancher/server:latest
+  ports:
+   - "18080:8080"
+  restart: always
+  volumes:
+    - /var/local/lib/rancher-server:/var/lib/mysql
